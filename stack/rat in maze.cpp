@@ -1,4 +1,6 @@
-#include <iostream>
+#include <iostream>  
+#include <fstream>
+#include <stack>
 using namespace std;
 template<typename T>
 class Stack{
@@ -40,12 +42,6 @@ public:
 		}
 	}
 };
-Main.cpp
-#include <iostream>  
-#include <fstream>
-#include <stack>
-using namespace std;
-
 class location {
 public:
 	int a;
@@ -68,8 +64,8 @@ bool RatInMaze(int** maze, int n, int** ResultantMaze) {
 		location curr = st.top();
 		st.pop();
 		int a = curr.a;
-		int b= curr.b;
-		if (a == n - 1 && b== n - 1) {
+		int b = curr.b;
+		if (a == n - 1 && b == n - 1) {
 			ResultantMaze[a][b] = 1;
 			return true;
 		}
