@@ -40,11 +40,6 @@ public:
 		}
 	}
 };
-
-Main.cpp
-#include <cstring>
-#include "stack.h"
-using namespace std;
 void evaluate(char* stk, int size){
 	int op1 = 0;
 	int op2 = 0;
@@ -78,7 +73,7 @@ void evaluate(char* stk, int size){
 			waste = stk[i];
 		}
 	}
-	cout << "\nFinal output: " <<static_cast<int>(s.pop()) << endl;
+	cout << "\nFinal output: " << static_cast<int>(s.pop()) << endl;
 }
 
 int main() {
@@ -88,6 +83,6 @@ int main() {
 	for (int i = 0; i < length; i++){
 		cout << infix[i];
 	}
-	evaluate(infix,length);
+	evaluate(infix, length);
 	return 0;
 }
