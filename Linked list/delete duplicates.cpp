@@ -1,12 +1,10 @@
+#include <iostream>
+using namespace std;
 struct Node{
 	int data;
 	Node* next;
 };
-LinkedList.h
 
-#include <iostream>
-#include "Node.h"
-using namespace std;
 class LinkedList{
 protected:
 	Node* head;
@@ -21,8 +19,6 @@ public:
 	virtual void deleteDuplicates() = 0;
 	virtual void addValue(int value) = 0;
 };
-myLL.h
-#include "LinkedList.h"
 class myLL :public LinkedList{
 public:
 	myLL() :LinkedList(){
@@ -80,8 +76,6 @@ public:
 	}
 
 };
-Main.cpp
-#include "myLL.h"
 int main() {
 	myLL list;
 	int choice, value;
