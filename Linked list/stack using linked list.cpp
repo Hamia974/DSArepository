@@ -1,11 +1,9 @@
+#include <iostream>
+using namespace std;
 struct Node{
 	int data;
 	Node* next;
 };
-LinkedList.h
-#include <iostream>
-#include "Node.h"
-using namespace std;
 class LinkedList{
 protected:
 	Node* head;
@@ -23,8 +21,6 @@ public:
 	virtual int deletefromTail() = 0;
 
 };
-myLL.h
-#include "LinkedList.h"
 class myLL :public LinkedList{
 public:
 	myLL() :LinkedList(){
@@ -80,7 +76,7 @@ public:
 	}
 	int deletefromHead(){
 		if (head == nullptr && tail == nullptr){
-			cout << "LL is empty. "<<endl;
+			cout << "LL is empty. " << endl;
 			return NULL;
 		}
 		else if (head == tail){ //single node
@@ -117,8 +113,6 @@ public:
 	}
 };
 
-stack.h
-#include "myLL.h"
 class Stack{
 public:
 	myLL l;
@@ -134,18 +128,13 @@ public:
 		return returning_value;
 	}
 	bool isempty(){
-		return l.deletefromHead()== NULL;
+		return l.deletefromHead() == NULL;
 	}
 	void display(){
 		l.display();
 	}
 
 };
-
-Main.cpp
-
-#include <iostream>
-#include "stack.h"
 using namespace std;
 int main() {
 	Stack s;
