@@ -9,7 +9,7 @@ private:
 	int currentsize;
 	int maxsize;
 public:
-	CircularQueue(int s=0) {
+	CircularQueue(int s = 0) {
 		maxsize = s;
 		queue = new string[maxsize];
 		front = 0;
@@ -26,11 +26,11 @@ public:
 		if (isFull()) {
 			cout << "Queue is full. Cannot add more customers." << endl;
 		}
-		else {	
-		queue[rear%maxsize] = name;
-		currentsize++;
-		rear++;
-		cout << "Customer " << name << " added to the queue." << endl;
+		else {
+			queue[rear%maxsize] = name;
+			currentsize++;
+			rear++;
+			cout << "Customer " << name << " added to the queue." << endl;
 		}
 	}
 	string dequeue() {
@@ -38,7 +38,7 @@ public:
 			cout << "Queue is empty. No customers to remove." << endl;
 		}
 		else {
-			
+
 			string returningvalue = queue[front%maxsize];
 			currentsize--;
 			front++;
@@ -77,10 +77,6 @@ public:
 	}
 
 };
-
-Main.cpp
-
-#include "circularqueue.h"
 int main() {
 	int maxsize;
 	cout << "Enter the maxsize of the queue: ";
