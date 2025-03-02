@@ -1,11 +1,11 @@
+
+#include <iostream>
+using namespace std;
 struct Node{
 	int data;
 	Node* next;
 };
-LinkedList.h
-#include <iostream>
-#include "Node.h"
-using namespace std;
+
 class LinkedList{
 protected:
 	Node* head;
@@ -23,8 +23,7 @@ public:
 	virtual int deletefromTail() = 0;
 
 };
-myLL.h
-#include "LinkedList.h"
+
 class myLL :public LinkedList{
 public:
 	myLL() :LinkedList(){
@@ -39,7 +38,7 @@ public:
 		if (head == nullptr && tail == nullptr){
 
 			head = nn;
-			tail == nn;
+			tail = nn;
 
 		}
 		else{//non-empty
@@ -80,7 +79,7 @@ public:
 	}
 	int deletefromHead(){
 		if (head == nullptr && tail == nullptr){
-			cout << "LL is empty. "<<endl;
+			cout << "LL is empty. " << endl;
 			return NULL;
 		}
 		else if (head == tail){ //single node
@@ -116,8 +115,6 @@ public:
 		return returningvalue;
 	}
 };
-queue.h
-#include "myLL.h"
 class Queue{
 public:
 	myLL l;
@@ -140,10 +137,6 @@ public:
 	}
 
 };
-
-Main.cpp
-#include "queue.h"
-using namespace std;
 int main() {
 	Queue q;
 	int choice, value;
@@ -189,4 +182,3 @@ int main() {
 
 	return 0;
 }
-
