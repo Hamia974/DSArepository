@@ -1,4 +1,5 @@
 #include <iostream>
+#include "string"
 using namespace std;
 template<typename T>
 class AbstractStack{
@@ -28,10 +29,6 @@ public:
 	}
 
 };
-
-myStack.h
-
-#include "AbstractStack.h"
 template<typename T>
 class myStack :public AbstractStack<T>{
 public:
@@ -71,12 +68,6 @@ public:
 	}
 };
 
-Main.cpp
-
-# include <iostream>
-# include <string>
-# include "myStack.h"
-using namespace std;
 bool checkbalance(int length, string str){
 	myStack<char> s(length);
 	for (int i = 0; i <length; i++)
