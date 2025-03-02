@@ -1,4 +1,4 @@
-AbstractStack.h
+
 #include <iostream>
 using namespace std;
 template<typename T>
@@ -29,8 +29,6 @@ public:
 	}
 
 };
-myStack.h
-#include “AbstractClass.h”
 template<typename T>
 class myStack :public AbstractStack<T>{
 public:
@@ -47,10 +45,10 @@ public:
 	}
 	T pop(){
 		return stack[--currentsize];
-		
+
 	}
 	T top()const{
-		return stack[currentsize-1];
+		return stack[currentsize - 1];
 	}
 	bool isEmpty()const{
 		return currentsize == 0;
@@ -59,9 +57,9 @@ public:
 		return currentsize == maxsize;
 	}
 	void display(){
-		cout << “values of stack is: “;
+		cout << "values of stack is : ";
 		for (int i = 0; i < currentsize; i++){
-			cout << stack[i] << “ “;
+			cout << stack[i] << " ";
 		}
 	}
 	~myStack(){
@@ -69,82 +67,79 @@ public:
 		stack = nullptr;
 	}
 };
-Main.cpp
-#include “myStack.h”
-int main(){
-	myStack<int> s(5);		
+int main() {
+	myStack<int> s(5);
 	int choice, value;
-		do {
-			cout << “Menu:\n”;
-			cout << “1. Push\n”;
-			cout << “2. Pop\n”;
-			cout << “3. Top\n”;
-			cout << “4. Is Empty?\n”;
-			cout << “5. Is Full?\n”;
-			cout << “6. Display\n”;
-			cout << “0. Exit\n”;
-			cout << “Enter your choice: “;
-			cin >> choice;
-			switch (choice) {
-			case 1:
-				cout << “Enter value to push: “;
-				cin >> value;
-				s.push(value);
-				break;
+	do {
+		cout << "Menu:\n";
+		cout << "1. Push\n";
+		cout << "2. Pop\n";
+		cout << "3. Top\n";
+		cout << "4. Is Empty?\n";
+		cout << "5. Is Full?\n";
+		cout << "6. Display\n";
+		cout << "0. Exit\n";
+		cout << "Enter your choice: ";
+		cin >> choice;
 
-			case 2:
-				if (!s.isEmpty()) {
-					cout << “Popped value: “ << s.pop() << endl;
-				}
-				else {
-					cout << “Stack is empty, cannot pop!\n”;
-				}
-				break;
+		switch (choice) {
+		case 1:
+			cout << "Enter value to push: ";
+			cin >> value;
+			s.push(value);
+			break;
 
-			case 3:
-				if (!s.isEmpty()) {
-					cout << “Top value: “ << s.top() << endl;
-				}
-				else {
-					cout << “Stack is empty!\n”;
-				}
-				break;
-
-			case 4:
-				if (s.isEmpty()){
-					cout << “stack is empty.” << endl;
-				}
-				else{
-					cout << “stack is not empty.” << endl;
-				}
-				break;
-
-			case 5:
-				if (s.isFull()){
-					cout << “stack is full.” << endl;
-				}
-				else{
-					cout << “stack is not full.” << endl;
-				}
-				break;
-
-			case 6:
-				s.display();
-				break;
-
-			case 0:
-				cout << “Exiting…\n”;
-				break;
-
-			default:
-				cout << “Invalid choice! Please try again.\n”;
+		case 2:
+			if (!s.isEmpty()) {
+				cout << "Popped value: " << s.pop() << endl;
 			}
+			else {
+				cout << "Stack is empty, cannot pop!\n";
+			}
+			break;
 
-			cout << endl;
+		case 3:
+			if (!s.isEmpty()) {
+				cout << "Top value: " << s.top() << endl;
+			}
+			else {
+				cout << "Stack is empty!\n";
+			}
+			break;
 
-		} while (choice != 0);
+		case 4:
+			if (s.isEmpty()) {
+				cout << "Stack is empty." << endl;
+			}
+			else {
+				cout << "Stack is not empty." << endl;
+			}
+			break;
 
-		return 0;
-	
+		case 5:
+			if (s.isFull()) {
+				cout << "Stack is full." << endl;
+			}
+			else {
+				cout << "Stack is not full." << endl;
+			}
+			break;
+
+		case 6:
+			s.display();
+			break;
+
+		case 0:
+			cout << "Exiting...\n";
+			break;
+
+		default:
+			cout << "Invalid choice! Please try again.\n";
+		}
+
+		cout << endl;
+
+	} while (choice != 0);
+
+	return 0;
 }
-
