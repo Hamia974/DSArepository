@@ -1,15 +1,12 @@
-Node.h
+
 #include <iostream>
 #include <string>
+using namespace std;
 template <typename T>
 struct node{
 	T data;
 	node* next;
 };
-Linkedlist.h
-#include "node.h" 
-#include <iostream>
-using namespace std;
 template <typename T>
 class linkedlist {
 protected:
@@ -25,12 +22,12 @@ public:
 		nn->data = value;
 		nn->next = nullptr;
 		if (head == nullptr && tail == nullptr) {
-		
+
 			head = nn;
 			tail = nn;
 		}
 		else {
-			
+
 			tail->next = nn;
 			tail = nn;
 		}
@@ -50,15 +47,11 @@ public:
 		cout << endl;
 	}
 };
-Main.cpp
-#include <iostream>
-#include "linkedlist.h"
-using namespace std;
 int main() {
-	linkedlist<int> L; 
-	int choice;       
-	int value;       
-	do {	
+	linkedlist<int> L;
+	int choice;
+	int value;
+	do {
 		cout << "......Menu.." << endl;
 		cout << "1. Insert a value." << endl;
 		cout << "2. Display the linked list." << endl;
@@ -83,7 +76,7 @@ int main() {
 			cout << "Invalid choice. Please try again." << endl;
 			break;
 		}
-	} while (choice != 0); 
+	} while (choice != 0);
 
 	return 0;
 }
