@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 template<typename T>
 class Stack{
@@ -41,11 +42,8 @@ public:
 	}
 };
 
-MAIN.CPP
-#include "stack.h"
-#include <string>
 string reverse(string& s, int size) {
-	string reversestring(size,'\0');
+	string reversestring(size, '\0');
 	for (int i = 0; i < size; i++) {
 		reversestring[i] = s[size - i - 1];
 		if (reversestring[i] == '(') {
@@ -88,7 +86,7 @@ int main(){
 	cout << "Reversed: " << reversed_expression << endl;
 	string prefix = infixtopreffix(reversed_expression, length);
 	cout << "Prefix before final reverse: " << prefix << endl;
-	string final_prefix = reverse(prefix,prefix.length());
+	string final_prefix = reverse(prefix, prefix.length());
 	cout << "Final Prefix: " << final_prefix << endl;
 
 	return 0;
